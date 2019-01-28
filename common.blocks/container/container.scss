@@ -1,5 +1,12 @@
 .container {
+    font-size: 2rem;
     height: auto;
     margin: auto;
+    text-align: center;
     width: 100%;
+
+    h2 {
+        color: rgb(10, 34, 57);
+        margin: 0 0 1em;
+    }
 }

@@ -25,10 +25,9 @@ function serve() {
     browserSyncFunc();
 
     watch("./common.blocks/**/*.scss", series(sassCompile));
-    watch(
-        "./common.blocks/button/**/*.html",
-        browserSync.reload
-    );
+    watch("./common.blocks/button/button.html", {
+        events: "change"
+    }, browserSync.reload);
 }
 
 // Compile sass into CSS & auto-inject into browsers

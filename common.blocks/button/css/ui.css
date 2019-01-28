@@ -1,44 +1,68 @@
 .button {
-  border: 1px solid #abc;
+  border: none;
   border-radius: 5px;
   cursor: pointer;
-  padding: 10px 30px;
-}
-.button_reset_true {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  background: rgba(0, 0, 0, 0);
-  display: block;
-  margin: 0;
-  overflow: visible;
-  width: auto;
-  /* inherit font & color from ancestor */
-  color: inherit;
-  font: inherit;
-  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-  line-height: normal;
-  /* Corrects font smoothing for webkit */
+  font-size: 1.2rem;
+  position: relative;
+  top: -3px;
+  -webkit-transition: top 0.1s ease, -webkit-box-shadow 0.3s ease;
+  transition: top 0.1s ease, -webkit-box-shadow 0.3s ease;
+  -o-transition: box-shadow 0.3s ease, top 0.1s ease;
+  transition: box-shadow 0.3s ease, top 0.1s ease;
+  transition: box-shadow 0.3s ease, top 0.1s ease, -webkit-box-shadow 0.3s ease;
   -webkit-font-smoothing: inherit;
   -moz-osx-font-smoothing: inherit;
 }
+
+.button:hover {
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.button:active {
+  top: 0;
+}
+
+.button:focus {
+  outline: 1px solid transparent;
+}
+
 .button_state_disabled {
-  background: #9c9898;
-  color: #456;
+  background: #8d8585;
   cursor: not-allowed;
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.button_state_disabled .button__text {
+  color: #000;
 }
 .container {
+  font-size: 2rem;
   height: auto;
   margin: auto;
+  text-align: center;
   width: 100%;
 }
+
+.container h2 {
+  color: #0a2239;
+  margin: 0 0 1em;
+}
 .page {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   height: 100vh;
   margin: 0;
   padding: 0;
+}
+
+.page > * {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 .row {
   -webkit-box-align: center;
@@ -50,8 +74,8 @@
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  margin-bottom: 6em;
-  padding: 3em;
+  margin-bottom: 2em;
+  padding: .4em;
 }
 .button_size_large {
   padding: 16px 40px;
@@ -65,9 +89,15 @@
 .button_size_small {
   padding: 4px 10px;
 }
-
-
+.button_theme_dark {
+  background: #456;
+  color: #fff;
+}
+.button_theme_light {
+  background-color: #ccd8e0;
+  color: #456;
+}
 .button__text {
-  color: #123;
+  color: inherit;
   font-weight: 600;
 }
