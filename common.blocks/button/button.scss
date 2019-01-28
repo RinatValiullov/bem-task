@@ -1,0 +1,9 @@
+$borderButton: 1px solid #abc;
+$borderRadius: 5px;
+
+.button {
+    border: $borderButton;
+    border-radius: $borderRadius;
+    cursor: pointer;
+    padding: 10px 30px;
+}

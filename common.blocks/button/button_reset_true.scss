@@ -1,0 +1,19 @@
+.button_reset_true {
+    appearance: none;
+    background: rgba(0, 0, 0, 0);
+    display: block;
+    margin: 0;
+    overflow: visible;
+    width: auto;
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+}

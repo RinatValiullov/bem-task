@@ -6,17 +6,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>UI element - button</title>
-    <link rel="stylesheet" href="css/button.css">
+    <link rel="stylesheet" href="css/ui.css">
 </head>
 
-<body>
+<body class="page">
 
     <div class="container">
 
-        <button class="button">
-            <span>Click me</span>
-        </button>
+        <!-- light theme -->
+        <div class="row">
+            <button class="button button_reset_true button_size_small">
+                <span class="button__text">Click me</span>
+            </button>
+            <button class="button button_reset_true button_size_normal">
+                <span class="button__text">Click me</span>
+            </button>
+            <button class="button button_reset_true button_size_medium">
+                <span class="button__text">Click me</span>
+            </button>
+            <button class="button button_reset_true button_size_large">
+                <span class="button__text">Click me</span>
+            </button>
+        </div>
 
+        <!-- dark theme -->
+        <div class="row">
+            <button class="button button_reset_true button_size_small">
+                <span class="button__text">Click me</span>
+            </button>
+            <button class="button button_reset_true button_size_normal">
+                <span class="button__text">Click me</span>
+            </button>
+            <button class="button button_reset_true button_size_medium">
+                <span class="button__text">Click me</span>
+            </button>
+            <button class="button button_reset_true button_size_large">
+                <span class="button__text">Click me</span>
+            </button>
+        </div>
+
+        <!-- disabled -->
+        <div class="row">
+            <button class="button button_reset_true button_size_small button_state_disabled">
+                <span class="button__text">Click me</span>
+            </button>
+            <button class="button button_reset_true button_size_normal button_state_disabled">
+                <span class="button__text">Click me</span>
+            </button>
+            <button class="button button_reset_true button_size_medium button_state_disabled">
+                <span class="button__text">Click me</span>
+            </button>
+            <button class="button button_reset_true button_size_large button_state_disabled">
+                <span class="button__text">Click me</span>
+            </button>
+        </div>
     </div>
 
 </body>
