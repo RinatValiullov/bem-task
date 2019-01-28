@@ -1,20 +1,36 @@
-const {
-    series
-} = require('gulp');
+const { src, dest, watch, series } = require("gulp");
+let sass = require("gulp-sass");
 
-// The `clean` function is not exported so it can be considered a private task.
-// It can still be used within the `series()` composition.
-function clean(cb) {
-    // body omitted
-    cb();
+let browserSync = require("browser-sync").create();
+
+function browserSyncFunc() {
+  browserSync.init({
+    server: {
+      baseDir: "./common.blocks/button/"
+    },
+    notify: false
+  });
 }
 
-// The `build` function is exported so it is public and can be run with the `gulp` command.
-// It can also be used within the `series()` composition.
-function build(cb) {
-    // body omitted
-    cb();
+// Static Server + watching scss/html files
+function serve() {
+  browserSyncFunc();
+
+  watch("./common.blocks/button/**/*.scss", series(sassCompile));
+  watch(
+    "./common.blocks/button/**/*.html",
+    { events: "change" },
+    browserSync.reload
+  );
 }
 
-exports.build = build;
-exports.default = series(clean, build);
+// Compile sass into CSS & auto-inject into browsers
+function sassCompile() {
+  return src("./common.blocks/button/**/*.scss")
+    .pipe(sass())
+    .pipe(dest("./common.blocks/button/css/"))
+    .pipe(browserSync.stream());
+}
+
+exports.browserSyncFunc = browserSyncFunc;
+exports.default = series(sassCompile, serve);
